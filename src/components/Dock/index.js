@@ -1,6 +1,6 @@
 import React from 'react';
-import '../index.css'
-import City from './City'
+import './index.css'
+import City from '../City'
 
 const Dock = props => {
 
@@ -8,7 +8,12 @@ const Dock = props => {
         return <City 
             key={i}
             name={dat.stacja}
-            temperature={dat.temperatura} />
+            temperature={dat.temperatura}
+            humidity={dat.wilgotnosc_wzgledna}
+            pressure={dat.cisnienie}
+            wind={dat.predkosc_wiatru}
+            prec={dat.suma_opadu}
+             />
     })
 
     return (

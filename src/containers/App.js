@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import '../index.css';
+import './App.css';
 import Search from '../components/Search'
 import Dock from '../components/Dock'
 
@@ -22,7 +22,7 @@ const App = () => {
   useEffect(() => {
     setFiltered(
       data.filter((dat) => {
-        return dat.stacja.toLowerCase().includes(draft.toLowerCase());
+        return dat.stacja.toLowerCase().includes(draft.trim().toLowerCase());
       })
     );
   }, [data, draft]);
@@ -37,9 +37,8 @@ const App = () => {
 
   return (
     <div className="container">
-      <h2>Aktualne warunki meteorologiczne</h2>
       <Search draft={draft} onChange={update} onSubmit={submit} />
-      {!loaded && <p>Wczytywanie...</p>}
+      {!loaded && <div className="loading">Wczytywanie...</div>}
       <Dock data={filtered} />
     </div>
   );
