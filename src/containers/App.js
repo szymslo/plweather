@@ -4,6 +4,7 @@ import Search from '../components/Search'
 import Dock from '../components/Dock'
 
 const App = () => {
+
   const [data, setData] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [draft, setDraft] = useState('');

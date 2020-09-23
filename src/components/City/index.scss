@@ -1,0 +1,110 @@
+$colors: rgba(140, 0, 255, 0.5),rgba(68, 0, 255, 0.5), rgba(0, 13, 255, 0.5),
+ rgba(0, 110, 255, 0.5), rgba(0, 238, 255, 0.5), rgba(0, 255, 157, 0.5),
+ rgba(12, 150, 0, 0.5), rgba(170, 255, 0, 0.5), rgba(251, 255, 0, 0.5), rgba(255, 187, 0, 0.5),
+ rgba(255, 102, 0, 0.5), rgba(255, 0, 0, 0.5), rgba(255, 0, 119, 0.5);
+
+%temp-shared {
+    border-radius: 8px;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+h6 {
+    margin-top: 1rem;
+    font-size:0.6rem;
+    font-style: oblique
+}
+
+.city {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 1rem 1rem;
+    width: 25%;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    word-wrap: break-word;
+    min-width: 200px;
+    z-index: 1;
+    font-weight: 1000;
+}
+
+
+.very_hot {
+    @extend %temp-shared;
+    background-color: nth($colors,13);
+
+}
+
+.hot {
+    @extend %temp-shared;
+    background-color: nth($colors,12);
+}
+
+.warm {
+    @extend %temp-shared;
+    background-color: nth($colors,11);
+}
+
+.low_warm {
+    @extend %temp-shared;
+    background-color: nth($colors,10);
+}
+
+.mild {
+    @extend %temp-shared;
+    background-color: nth($colors,9);
+}
+
+.low_mild {
+    @extend %temp-shared;
+    background-color: nth($colors,8);
+}
+
+.cool {
+    @extend %temp-shared;
+    background-color: nth($colors,7);
+}
+
+.low_cool {
+    @extend %temp-shared;
+    background-color: nth($colors,6);
+}
+
+.cold {
+    @extend %temp-shared;
+    background-color: nth($colors,5);
+}
+
+.low_cold {
+    @extend %temp-shared;
+    background-color: nth($colors,4);
+}
+
+.freeze {
+    @extend %temp-shared;
+    background-color: nth($colors,3);
+}
+
+.low_freeze {
+    @extend %temp-shared;
+    background-color: nth($colors,2);
+}
+
+.frost {
+    @extend %temp-shared;
+    background-color: nth($colors,1);
+}
+
+.rain {
+    font-size:1.1rem;
+}

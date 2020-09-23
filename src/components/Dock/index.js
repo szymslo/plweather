@@ -13,8 +13,11 @@ const Dock = props => {
             pressure={dat.cisnienie}
             wind={dat.predkosc_wiatru}
             prec={dat.suma_opadu}
+            time={dat.godzina_pomiaru}
+            date={dat.data_pomiaru}
              />
     })
+
 
     return (
         <div className="dock">
