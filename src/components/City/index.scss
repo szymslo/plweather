@@ -1,5 +1,5 @@
 $colors: rgba(140, 0, 255, 0.5),rgba(68, 0, 255, 0.5), rgba(0, 13, 255, 0.5),
- rgba(0, 110, 255, 0.5), rgba(0, 238, 255, 0.5), rgba(0, 255, 157, 0.5),
+ rgba(0, 110, 255, 0.5), rgba(0, 238, 255, 0.5), rgba(0, 255, 136, 0.5),
  rgba(12, 150, 0, 0.5), rgba(170, 255, 0, 0.5), rgba(251, 255, 0, 0.5), rgba(255, 187, 0, 0.5),
  rgba(255, 102, 0, 0.5), rgba(255, 0, 0, 0.5), rgba(255, 0, 119, 0.5);
 
@@ -8,18 +8,23 @@ $colors: rgba(140, 0, 255, 0.5),rgba(68, 0, 255, 0.5), rgba(0, 13, 255, 0.5),
     padding-left: 0.4rem;
     padding-right: 0.4rem;
     font-size: 1.6rem;
+    margin-top: 1rem;
     margin-bottom: 0.5rem;
     display: inline-block;
 }
 
 h2 {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 
 h6 {
     margin-top: 1rem;
     font-size:0.6rem;
     font-style: oblique
+}
+
+p {
+    padding: .2rem;
 }
 
 .city {
@@ -38,6 +43,9 @@ h6 {
     font-weight: 1000;
 }
 
+.cityname {
+    border-bottom: 1px solid rgba(126, 126, 126, 0.6);
+}
 
 .very_hot {
     @extend %temp-shared;
@@ -106,5 +114,6 @@ h6 {
 }
 
 .rain {
-    font-size:1.1rem;
+    font-size: 1.1rem;
+    color: rgba(39, 77, 134, 0.9);
 }

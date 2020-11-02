@@ -10,14 +10,20 @@ const App = () => {
   const [draft, setDraft] = useState('');
   const [loaded, setLoaded] = useState(false);
 
+  const fetchData = async () => {
+    try {
+      const response = await fetch("https://danepubliczne.imgw.pl/api/data/synop");
+      const json = await response.json();
+      setData(json);
+      setLoaded(true);
+    }
+    catch(err) {
+      return("Błąd pobierania danych:" + err);
+    }
+  };
+
   useEffect(() => {
-    fetch("https://danepubliczne.imgw.pl/api/data/synop")
-      .then((response) => response.json())
-      .then((json) => {
-        setData(json);
-        setLoaded(true);
-      })
-      .catch((err) => console.log(err));
+    fetchData();
   }, []);
 
   useEffect(() => {
