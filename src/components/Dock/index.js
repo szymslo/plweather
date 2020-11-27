@@ -18,7 +18,6 @@ const Dock = props => {
              />
     })
 
-
     return (
         <div className="dock">
             {data}

@@ -4,5 +4,12 @@
 }
 
 .loading {
-    margin-top: 10rem
+    margin-top: 10rem;
+}
+
+.mapbox {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 import Search from '../components/Search'
 import Dock from '../components/Dock'
+import Polmap from '../components/Polmap'
 
 const App = () => {
 
@@ -9,6 +10,7 @@ const App = () => {
   const [filtered, setFiltered] = useState([]);
   const [draft, setDraft] = useState('');
   const [loaded, setLoaded] = useState(false);
+  const [mapView, setMapView] = useState(false);
 
   const fetchData = async () => {
     try {
@@ -42,12 +44,25 @@ const App = () => {
     setDraft("");
   };
 
+  const switchToMap = () => {
+    setMapView(!mapView);
+  }
+
   return (
-    <div className="container">
-      <Search draft={draft} onChange={update} onSubmit={submit} />
-      {!loaded && <div className="loading">Wczytywanie...</div>}
-      <Dock data={filtered} />
-    </div>
+    <>
+      <Search draft={draft} onChange={update} onSubmit={submit} toggleView = {switchToMap}/>
+      {mapView 
+        ? (
+          <div className="mapbox">
+            <Polmap data={data}/>
+          </div> )
+        : (
+          <div className="container">
+            {!loaded && <div className="loading">Wczytywanie...</div>}
+            <Dock data={filtered} />
+          </div>)
+      }
+    </>
   );
 };
 
