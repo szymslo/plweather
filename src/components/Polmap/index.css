@@ -1,13 +1,22 @@
 .mapcontainer {
     margin: 0 auto;
-    margin-top: 5vh;
     width: 100%;
-    max-width: 600px;
+    max-width: 1000px;
     height: 600px;
-    display: block;
+    background-color: darkgoldenrod;
+    align-self: stretch;
 }
 
 .map {
     width: 100%;
     height: 100%;
+    background-color: cyan;
 }
+
+.details {
+    margin: 0 auto;
+    background-color: darkblue;
+}
+
+
+
