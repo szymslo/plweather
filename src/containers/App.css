@@ -1,15 +1,17 @@
 .container {
     margin: 0 auto;
-    text-align: center;
-}
-
-.loading {
-    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .mapbox {
+    margin: 0 auto;
     display: flex;
-    height: 100vh;
     justify-content: center;
     align-items: center;
+    align-content: center;
+    min-height: 100vh;
 }

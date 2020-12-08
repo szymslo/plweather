@@ -51,7 +51,7 @@ const App = () => {
   return (
     <>
       <Search draft={draft} onChange={update} onSubmit={submit} toggleView = {switchToMap}/>
-      {mapView 
+      {!mapView
         ? (
           <div className="mapbox">
             <Polmap data={data}/>
