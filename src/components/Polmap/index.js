@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 import allcities from "./allcities";
 import City from "../City";
+import Point from "../Point";
 
 const minE = 14.07;
 const maxN = 54.9;
@@ -13,6 +14,7 @@ const centerLong = 1000 / Math.abs(minE - maxE);
 
 const Polmap = ({ data }) => {
   const [markers, setMarkers] = useState([]);
+  const [currentMarker, setCurrentMarker] = useState(null);
 
   useEffect(() => {
     const cities = allcities.filter((city) =>
@@ -26,6 +28,10 @@ const Polmap = ({ data }) => {
       }))
     );
   }, [data]);
+
+  useEffect(() => {
+    setCurrentMarker(markers[54])
+  }, [markers])
 
   const rescaleN = (latitude) => {
     const lat = Math.round(Math.abs(latitude - maxN) * centerLat * 100) / 100;
@@ -67,26 +73,27 @@ const Polmap = ({ data }) => {
   };
 
   return (
-    <>
+    <div className="box">
       <div className="details">
-        <City
-          key='1'
-          name="Chrząszczyrzewoszyce powiat łękołody"
-          temperature='23'
-          humidity='23'
-          pressure='23'
-          wind='23'
-          prec='23'
-          time='23'
-          date='23.23.23'
-        />
+        {currentMarker && (
+          <City
+            name={currentMarker.name}
+            temperature={currentMarker.temperatura}
+            humidity={currentMarker.wilgotnosc_wzgledna}
+            pressure={currentMarker.cisnienie}
+            wind={currentMarker.predkosc_wiatru}
+            prec={currentMarker.suma_opadu}
+            time={currentMarker.godzina_pomiaru}
+            date={currentMarker.data_pomiaru}
+          />
+        )}
       </div>
       <div className="mapcontainer">
         <svg
           className="map"
           baseProfile="tiny"
-          fill="rgba(255,255,255,0.8)"
-          stroke="rgba(0,0,0,0.6)"
+          fill="rgba(0, 0, 0, 0.25)"
+          stroke="rgba(255, 255, 255, 0.6)"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
@@ -193,21 +200,20 @@ const Polmap = ({ data }) => {
           <svg className="circles">
             {markers.map((marker) => {
               return (
-                <circle
+                <Point
                   key={marker.name}
-                  cx={rescaleE(marker.long)}
-                  cy={rescaleN(marker.lat)}
-                  r="15"
-                  onClick={() => alert(marker.name + ": " + marker.temperatura)}
-                  fill={pickColor(marker.temperatura)}
-                  stroke={pickColor(marker.temperatura)}
+                  id={marker.id_stacji}
+                  long={rescaleE(marker.long)}
+                  lat={rescaleN(marker.lat)}
+                  updateCity={() => setCurrentMarker(marker)}
+                  color={pickColor(marker.temperatura)}
                 />
               );
             })}
           </svg>
         </svg>
       </div>
-    </>
+    </div>
   );
 };
 
