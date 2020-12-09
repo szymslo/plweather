@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
-import Search from '../components/Search'
-import Dock from '../components/Dock'
-import Polmap from '../components/Polmap'
+import { useMediaQuery } from 'react-responsive';
+import Search from '../components/Search';
+import Dock from '../components/Dock';
+import Polmap from '../components/Polmap';
+import './App.scss';
 
 const App = () => {
 
@@ -10,7 +11,7 @@ const App = () => {
   const [filtered, setFiltered] = useState([]);
   const [draft, setDraft] = useState('');
   const [loaded, setLoaded] = useState(false);
-  const [mapView, setMapView] = useState(false);
+  const mapView = useMediaQuery({query: '(min-width: 800px)'});
 
   const fetchData = async () => {
     try {
@@ -44,23 +45,22 @@ const App = () => {
     setDraft("");
   };
 
-  const switchToMap = () => {
-    setMapView(!mapView);
-  }
-
   return (
     <>
-      <Search draft={draft} onChange={update} onSubmit={submit} toggleView = {switchToMap}/>
-      {!mapView
+      {mapView
         ? (
           <div className="mapbox">
             <Polmap data={data}/>
           </div> )
         : (
-          <div className="container">
-            {!loaded && <div className="loading">Wczytywanie...</div>}
-            <Dock data={filtered} />
-          </div>)
+          <>
+            <Search draft={draft} onChange={update} onSubmit={submit}/>
+            <div className="container">
+              {!loaded && <div className="loading">Wczytywanie...</div>}
+              <Dock data={filtered} />
+            </div>
+          </>
+          )
       }
     </>
   );
