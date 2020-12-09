@@ -1,3 +1,19 @@
-## http://plweather.vercel.app
+### This application allows you to check current weather in polish major cities. Data comes from IMGW public API.
 
-![plweather](https://user-images.githubusercontent.com/52113159/97114332-3873b000-16f0-11eb-80ea-37e028929edb.gif)
+#
+
+In the project directory, you can run:
+
+#### `yarn start`
+
+#### `yarn test`
+
+#### `yarn build`
+
+#### `yarn eject`
+
+#
+
+#### Data source: https://danepubliczne.imgw.pl/
+#### Map source: https://github.com/Schkar/Map-of-Poland
+
