@@ -1,4 +1,4 @@
-### This application allows you to check current weather in polish major cities. Data comes from IMGW public API.
+### This application allows you to check current weather in polish major cities. Data comes from IMGW public API
 
 #
 
