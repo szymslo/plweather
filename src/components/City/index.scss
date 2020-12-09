@@ -60,7 +60,6 @@ p {
     .very_hot {
         @extend %temp-shared;
         background-color: nth($colors,13);
-    
     }
     
     .hot {

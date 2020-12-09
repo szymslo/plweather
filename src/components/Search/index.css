@@ -1,13 +1,3 @@
-%button-shared {
-    outline: none;
-    width: 2rem;
-    height: 2rem;
-    text-align: center;
-    border: none;
-    font-size: .9rem;
-    font-weight: 500;
-}
-
 .search {
     display:flex;
     flex-direction:row;
@@ -22,8 +12,9 @@
     flex-grow: 2;
     height: 2rem;
     border: none;
+    border-radius: 0 0 0 15px;
     outline: none;
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,0.7);
     text-align: center;
 }
 
@@ -32,13 +23,13 @@ input:focus::placeholder {
 }
 
 .delete {
-    @extend %button-shared;
+    outline: none;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    border: none;
+    font-size: .9rem;
+    font-weight: 500;
     background-color: indianred;
     border-radius: 0 0 15px 0;
-}
-
-.tomap {
-    @extend %button-shared;
-    background-color: cornflowerblue;
-    border-radius: 0 0 0 15px;
 }

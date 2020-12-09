@@ -1,7 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-const Point = ({lat, long, color, updateCity, deleteCity}) => {
-
+const Point = ({ lat, long, color, updateCity }) => {
   const [selected, setSelected] = useState(false);
 
   return (
@@ -9,11 +8,11 @@ const Point = ({lat, long, color, updateCity, deleteCity}) => {
       cx={long}
       cy={lat}
       r="15"
-      onMouseEnter = {() => {
+      onMouseEnter={() => {
         setSelected(true);
         updateCity();
       }}
-      onMouseLeave = {() => {
+      onMouseLeave={() => {
         setSelected(false);
       }}
       fill={selected ? "red" : color}
