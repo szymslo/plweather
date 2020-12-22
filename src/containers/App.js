@@ -11,7 +11,7 @@ const App = () => {
   const [filtered, setFiltered] = useState([]);
   const [draft, setDraft] = useState('');
   const [loaded, setLoaded] = useState(false);
-  const mapView = useMediaQuery({query: '(min-width: 800px)'});
+  const mapView = useMediaQuery({query: '(min-width: 700px)'});
 
   const fetchData = async () => {
     try {
