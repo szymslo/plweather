@@ -1,4 +1,3 @@
-import React from "react";
 import City from "../City";
 import "./index.css";
 

@@ -1,234 +1,265 @@
 $colors: rgba(140, 0, 255, 0.8),rgba(68, 0, 255, 0.8), rgba(0, 13, 255, 0.8),
- rgba(0, 110, 255, 0.8), rgba(0, 238, 255, 0.8), rgba(0, 255, 136, 0.8),
+ rgba(0, 132, 255, 0.8), rgba(0, 204, 255, 0.8), rgba(0, 255, 136, 0.8),
  rgba(12, 150, 0, 0.8), rgba(170, 255, 0, 0.8), rgba(251, 255, 0, 0.8), rgba(255, 187, 0, 0.8),
  rgba(255, 102, 0, 0.8), rgba(255, 0, 0, 0.8), rgba(255, 0, 119, 0.8);
 
 %temp-shared {
-    border-radius: .4em;
-    background-color: rgba(0,0,0,0.1);
-    padding-left: 0.4rem;
-    padding-right: 0.4rem;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    border-radius: .5em;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    margin-top: 2vh;
+    margin-bottom: 0.5vh;
+    font-weight: 900;
     display: inline-block;
 }
 
-h2 {
-    margin-bottom: .5rem;
-}
-
-h6 {
-    margin-top: 1rem;
-    font-size: 1.5vh;
-    font-style: oblique
-}
-
-p {
-    padding: .2rem;
-}
-
-.city {
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    padding: 1rem 1rem;
-    width: 25%;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 15px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
-    word-wrap: break-word;
-    min-width: 300px;
-    z-index: 1;
-    font-weight: 1000;
-}
-
-.mapbox .city {
-    border-radius: 0;
-    appearance: none;
-    background: none;
-    box-shadow: none;
-    color: white;
-    margin-right: 1rem;
-    font-size: 2.5vh;
-    min-width: calc(100vh - 25em);
-    width: auto;    
-}
-
-.cityname {
-    border-bottom: 1px solid rgba(126, 126, 126, 0.6);
-}
-
-.dock {
-    .very_hot {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,13);
-    }
-    
-    .hot {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,12);
-    }
-    
-    .warm {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,11);
-    }
-    
-    .low_warm {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,10);
-    }
-    
-    .mild {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,9);
-    }
-    
-    .low_mild {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,8);
-    }
-    
-    .cool {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,7);
-    }
-    
-    .low_cool {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,6);
-    }
-    
-    .cold {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,5);
-    }
-    
-    .low_cold {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,4);
-    }
-    
-    .freeze {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,3);
-    }
-    
-    .low_freeze {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,2);
-    }
-    
-    .frost {
-        @extend %temp-shared;
-        font-size: 1.6rem;
-        background-color: nth($colors,1);
-    }
+%temp-shared-mobile {
+    background-color: (rgba(255,255,255,0.4));
+    padding: 1vh 3vh;
+    margin-bottom: 3vh;
 }
 
 .mapbox {
+    p {
+        padding: 0.5vh;
+    }
+
+    h6 {
+        margin-top: 2vh;
+        font-size: 1.5vh;
+        font-style: oblique
+    }
+
+    .city {
+        min-width: calc(100vh - 25em);
+        margin-right: 1vw;
+        text-align: center;
+        padding: 1vw;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        word-wrap: break-word;
+        z-index: 1;
+        font-weight: 1000;
+        appearance: none;
+        background: none;
+        box-shadow: none;
+        color: white;
+        font-size: 2.5vh;
+
+        .cityname {
+            border-bottom: 1px solid rgba(126, 126, 126, 0.6);
+            padding-bottom: 1vh;
+        }
+    }
+
     .very_hot {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,13);
         border: .1em solid nth($colors,13);
     }
     
     .hot {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,12);
         border: .1em solid nth($colors,12);
     }
     
     .warm {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,11);
         border: .1em solid nth($colors,11);
     }
     
     .low_warm {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,10);
         border: .1em solid nth($colors,10);
     }
     
     .mild {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,9);
         border: .1em solid nth($colors,9);
     }
     
     .low_mild {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,8);
         border: .1em solid nth($colors,8);
     }
     
     .cool {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,7);
         border: .1em solid nth($colors,7);
     }
     
     .low_cool {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,6);
         border: .1em solid nth($colors,6);
     }
     
     .cold {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,5);
         border: .1em solid nth($colors,5);
     }
     
     .low_cold {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,4);
         border: .1em solid nth($colors,4);
     }
     
     .freeze {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,3);
         border: .1em solid nth($colors,3);
     }
     
     .low_freeze {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,2);
         border: .1em solid nth($colors,2);
     }
     
     .frost {
         @extend %temp-shared;
-        font-size: 3.5vh;
+        font-size: 5vh;
         color: nth($colors,1);
         border: .1em solid nth($colors,1);
     }
 }
 
+.dock {
+    color: #FFF;
+    h6 {
+        margin-top: 6vh;
+        font-style: italic;
+    }
+    p {
+        font-size: 3vh;
+        padding: 0.5vh;
+    }
+    .city {
+        min-width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .cityname {
+            padding: 1vh;
+            font-size: 5vh;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 3px 3px rgba(50,50,70,0.5);
+        }
+    }
+
+    .very_hot {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,13);
+    }
+    
+    .hot {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,12);
+    }
+    
+    .warm {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,11);
+    }
+    
+    .low_warm {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,10);
+    }
+    
+    .mild {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,9);
+    }
+    
+    .low_mild {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,8);
+    }
+    
+    .cool {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,7);
+    }
+    
+    .low_cool {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,6);
+    }
+    
+    .cold {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,5);
+    }
+    
+    .low_cold {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,4);
+    }
+    
+    .freeze {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,3);
+    }
+    
+    .low_freeze {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,2);
+    }
+    
+    .frost {
+        @extend %temp-shared;
+        @extend %temp-shared-mobile;
+        font-size: 9vh;
+        color: nth($colors,1);
+    }
+
+}

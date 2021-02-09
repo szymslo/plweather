@@ -1,5 +1,4 @@
-@mixin main {
-    margin: 0 auto;
+.mapbox {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -7,10 +6,8 @@
     min-height: 100vh;
 }
 
-.container {
-    @include main();
-}
-
-.mapbox {
-    @include main();
+.slider {
+    display: flex;
+    height: 100vh;
+    flex-direction: column; 
 }

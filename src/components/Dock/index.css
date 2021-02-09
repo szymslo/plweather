@@ -1,3 +1,10 @@
+.dock ::-webkit-scrollbar {
+    width: 0;
+}
+
 .dock {
-    z-index: 1;
+    position: relative;
+    height: 93%;
+    display: flex;
+    overflow-x: auto;
 }

@@ -1,24 +1,22 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useMediaQuery } from 'react-responsive';
 import Search from '../components/Search';
 import Dock from '../components/Dock';
 import Polmap from '../components/Polmap';
-import './App.scss';
+import './App.css';
 
 const App = () => {
 
   const [data, setData] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [draft, setDraft] = useState('');
-  const [loaded, setLoaded] = useState(false);
-  const mapView = useMediaQuery({query: '(min-width: 700px)'});
+  const mapView = useMediaQuery({query: '(min-width: 600px)'});
 
   const fetchData = async () => {
     try {
       const response = await fetch("https://danepubliczne.imgw.pl/api/data/synop");
       const json = await response.json();
       setData(json);
-      setLoaded(true);
     }
     catch(err) {
       return("Błąd pobierania danych:" + err);
@@ -53,13 +51,10 @@ const App = () => {
             <Polmap data={data}/>
           </div> )
         : (
-          <>
+          <div className="slider">
             <Search draft={draft} onChange={update} onSubmit={submit}/>
-            <div className="container">
-              {!loaded && <div className="loading">Wczytywanie...</div>}
               <Dock data={filtered} />
-            </div>
-          </>
+          </div>
           )
       }
     </>

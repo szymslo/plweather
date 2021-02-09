@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Point = ({ lat, long, color, updateCity }) => {
+  
   const [selected, setSelected] = useState(false);
 
   return (

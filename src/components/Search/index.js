@@ -1,9 +1,8 @@
-import React from "react";
 import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
-const Search = ({ onChange, onSubmit, toggleView, draft }) => {
+const Search = ({ onChange, onSubmit, draft }) => {
   return (
     <div className="search">
       <input
