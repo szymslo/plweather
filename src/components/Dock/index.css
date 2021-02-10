@@ -4,7 +4,7 @@
 
 .dock {
     position: relative;
-    height: 93%;
+    height: 100%;
     display: flex;
     overflow-x: auto;
 }

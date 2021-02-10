@@ -17,6 +17,8 @@ $colors: rgba(140, 0, 255, 0.8),rgba(68, 0, 255, 0.8), rgba(0, 13, 255, 0.8),
     background-color: (rgba(255,255,255,0.4));
     padding: 1vh 3vh;
     margin-bottom: 3vh;
+    font-size: 7vh;
+    text-shadow: .2vh .3vh .5vh rgba(0,0,0,0.3);
 }
 
 .mapbox {
@@ -174,91 +176,78 @@ $colors: rgba(140, 0, 255, 0.8),rgba(68, 0, 255, 0.8), rgba(0, 13, 255, 0.8),
     .very_hot {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,13);
     }
     
     .hot {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,12);
     }
     
     .warm {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,11);
     }
     
     .low_warm {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,10);
     }
     
     .mild {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,9);
     }
     
     .low_mild {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,8);
     }
     
     .cool {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,7);
     }
     
     .low_cool {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,6);
     }
     
     .cold {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,5);
     }
     
     .low_cold {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,4);
     }
     
     .freeze {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,3);
     }
     
     .low_freeze {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,2);
     }
     
     .frost {
         @extend %temp-shared;
         @extend %temp-shared-mobile;
-        font-size: 9vh;
         color: nth($colors,1);
     }
 
