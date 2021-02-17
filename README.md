@@ -1,6 +1,6 @@
 ### This application allows you to check current weather in polish major cities. Data comes from IMGW public API
 
-![plwea](https://user-images.githubusercontent.com/52113159/101699816-34bba300-3a7c-11eb-874b-fada764dae09.gif)
+![plw](https://user-images.githubusercontent.com/52113159/108235128-d418a880-7145-11eb-98e1-f440af47d52d.gif)
 
 #
 
