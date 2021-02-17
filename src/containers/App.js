@@ -10,6 +10,7 @@ const App = () => {
   const [data, setData] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [draft, setDraft] = useState('');
+  const [loaded, setLoaded] = useState(false);
   const mapView = useMediaQuery({query: '(min-width: 600px)'});
 
   const fetchData = async () => {
@@ -17,6 +18,7 @@ const App = () => {
       const response = await fetch("https://danepubliczne.imgw.pl/api/data/synop");
       const json = await response.json();
       setData(json);
+      setLoaded(true);
     }
     catch(err) {
       return("Błąd pobierania danych:" + err);
@@ -42,6 +44,8 @@ const App = () => {
   const submit = (event) => {
     setDraft("");
   };
+
+  if(!loaded) return <div className="loading"><div className="lds-ring"><div></div><div></div><div></div><div></div></div></div>
 
   return (
     <>
